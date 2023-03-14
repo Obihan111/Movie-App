@@ -1,0 +1,115 @@
+:root{
+    --primary-clr: #22254b;
+    --secondary-clr:#373b69;
+}
+
+
+*{
+    box-sizing:border-box;
+}
+
+
+body{
+    background-color: var(--primary-clr, yellow);
+    margin:0;
+}
+
+header{
+    padding:1rem;
+    display:flex;
+    justify-content: flex-end;
+    background-color:var(--secondary-clr);
+}
+
+
+.search {
+    border:2px solid var(--primary-clr,red);
+    border-radius:50px;
+    font-size:1rem;
+    padding:0.5rem 1rem;
+    color:#fff;
+    background-color: transparent;
+}
+
+.search::placeholder{
+    color:#7378c5;
+}
+
+.search:focus{
+    background-color: var(--primary-clr);
+    outline:none;
+}
+
+main{
+    display: flex;
+    flex-wrap:wrap;
+
+}
+
+.movie{
+    width:300px;
+    margin:1rem;
+    background-color: var(--secondary-clr);
+    position: relative;
+    overflow:hidden;
+
+}
+
+.movie img{
+    width:100% ;/*100% of its container*/
+}
+
+.movie-info{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color:#ccc;
+    padding:0.5rem 1rem 1rem;
+    letter-spacing:0.5;
+
+
+}
+
+.movie-info h3{
+    margin-top:0;
+}
+
+.movie-info span{
+    background-color: var(--primary-clr);
+    padding:0.25rem 0.5rem;
+    border-radius:3px;
+    font-weight:bold;
+}
+
+.movie-info span.green{
+    color:lightgreen;
+}
+
+.movie-info span.orange{
+    color: orange;
+}
+
+.movie-info span.red{
+    color:red;
+}
+
+.overview{
+    background-color:white;
+    padding:2rem;
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    max-height:100%;
+    transform:translateY(101%); /* to completely move the overview outside the movie container*/
+    transition:0.3s ease-in;
+}
+
+.movie:hover .overview{  /* To hover on the movie container,and act on the overview class only,and remove the initial transform on hover.*/
+   transform: translateY(0%)
+}
+
+h3#popularity{
+    text-align:center;
+    color:#fff;
+}
